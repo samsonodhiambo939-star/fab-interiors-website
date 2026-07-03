@@ -1,0 +1,5 @@
+name = "fab-interiors"
+pages_build_output_dir = "out"
+
+[pages]
+project_name = "fab-interiors"

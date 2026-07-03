@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAB INTERIORS - Business Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e8e8e8;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+  }
+
+  .card-set {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 510px;
+    height: 290px;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    display: flex;
+    position: relative;
+  }
+
+  .front {
+    outline: 3px solid #1B3B2F;
+    outline-offset: -3px;
+  }
+
+  .card-back {
+    background: #1B3B2F;
+  }
+
+  .front .left {
+    width: 140px;
+    background: #1B3B2F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    position: relative;
+  }
+
+  .front .left::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .logo-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.3);
+    background: #fff;
+  }
+
+  .logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .left .tagline {
+    color: rgba(255,255,255,0.7);
+    font-size: 7.5px;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+
+  .front .right {
+    flex: 1;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .gold-logo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    line-height: 1;
+    color: #1a6fb5;
+  }
+
+  .gold-logo .line1 {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+  }
+
+  .gold-logo .script-f {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1;
+    color: #1a6fb5;
+    letter-spacing: -1px;
+  }
+
+  .gold-logo .ab {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+    color: #1a6fb5;
+  }
+
+  .gold-logo .line2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #1a6fb5;
+  }
+
+  .company-sub {
+    font-size: 9px;
+    color: #1B3B2F;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .divider {
+    width: 50px;
+    height: 2.5px;
+    background: #1a6fb5;
+    margin-bottom: 12px;
+  }
+
+  .services {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .service-tag {
+    font-size: 8px;
+    padding: 4px 12px;
+    background: #e8f0fe;
+    color: #1a3a5c;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 7px;
+  }
+
+  .contact-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-icon {
+    width: 18px;
+    height: 18px;
+    background: #1a6fb5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon svg {
+    width: 9px;
+    height: 9px;
+    fill: #fff;
+  }
+
+  .contact-label {
+    font-size: 9px;
+    color: #1a6fb5;
+    font-weight: 700;
+    width: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-value {
+    font-size: 10.5px;
+    color: #111;
+    font-weight: 600;
+  }
+
+  .contact-value a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* === BACK SIDE === */
+  .back-left {
+    width: 140px;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    position: relative;
+  }
+
+  .back-left::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .back-left .small-logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.2);
+    margin-bottom: 8px;
+  }
+
+  .back-left .social-label {
+    color: rgba(255,255,255,0.8);
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  .back-right {
+    flex: 1;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .back-right .back-title {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .back-right .back-sub {
+    color: rgba(255,255,255,0.85);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .qr-section img {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 5px;
+  }
+
+  .qr-section .qr-label {
+    color: rgba(255,255,255,0.85);
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .social-icons a {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+
+  .social-icons a:hover {
+    background: rgba(255,255,255,0.3);
+  }
+
+  .social-icons svg {
+    width: 12px;
+    height: 12px;
+    fill: rgba(255,255,255,0.85);
+  }
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1B3B2F, #2a6b4f, #1B3B2F);
+  }
+
+  .card-back .bottom-bar {
+    background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  }
+
+  .corner-arcs {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 130px;
+    height: 130px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .corner-arcs .arc {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 100% 0;
+    background: transparent;
+  }
+
+  .corner-arcs .arc-1 {
+    width: 40px;
+    height: 40px;
+    border-right: 1.5px solid #D4AF37;
+    border-bottom: 1.5px solid #D4AF37;
+    filter: drop-shadow(0 0 2px rgba(212,175,55,0.4));
+  }
+
+  .corner-arcs .arc-2 {
+    width: 62px;
+    height: 62px;
+    border-right: 2px solid #E6C15C;
+    border-bottom: 2px solid #E6C15C;
+    filter: drop-shadow(0 0 3px rgba(230,193,92,0.3));
+  }
+
+  .corner-arcs .arc-3 {
+    width: 84px;
+    height: 84px;
+    border-right: 2.5px solid #1E5A8B;
+    border-bottom: 2.5px solid #1E5A8B;
+  }
+
+  .corner-arcs .arc-4 {
+    width: 106px;
+    height: 106px;
+    border-right: 3px solid #1A1A1A;
+    border-bottom: 3px solid #1A1A1A;
+  }
+
+  .corner-arcs .arc-5 {
+    width: 128px;
+    height: 128px;
+    border-right: 3.5px solid #1A1A1A;
+    border-bottom: 3.5px solid #1A1A1A;
+  }
+
+  .flip-label {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 10px;
+    color: #999;
+    font-weight: 500;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .card-set { gap: 0; }
+    .card { box-shadow: none; border: 1px solid #ddd; page-break-after: always; }
+    .flip-label { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .card { width: 340px; height: auto; min-height: 200px; }
+    .front .left,
+    .back-left { width: 100px; padding: 15px 8px; }
+    .front .right,
+    .back-right { padding: 15px; }
+    .company-name { font-size: 12px; }
+    .logo-circle { width: 50px; height: 50px; }
+    .qr-section img { width: 70px; height: 70px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card-set">
+
+  <!-- FRONT -->
+  <div>
+    <div class="card front">
+      <div class="left">
+        <div class="logo-circle">
+          <img src="logo-card.jpeg" alt="FAB INTERIORS logo">
+        </div>
+        <div class="tagline">Design &bull; Build &bull; Inspire</div>
+      </div>
+      <div class="right">
+        <div class="gold-logo">
+          <div class="line1">
+            <span class="script-f">F</span>
+            <span class="ab">AB</span>
+          </div>
+          <div class="line2">INTERIORS AND CONSTRUCTION CO.</div>
+        </div>
+        <div class="company-sub">Interior Design &amp; Construction &mdash; Nairobi</div>
+        <div class="divider"></div>
+        <div class="services">
+          <span class="service-tag">Construction</span>
+          <span class="service-tag">Interior Design</span>
+          <span class="service-tag">Furniture</span>
+          <span class="service-tag">Flooring</span>
+          <span class="service-tag">Architecture</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">0752 653759 / 0741 586357</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">info@fabinteriors.co.ke</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Nairobi, Kenya</span>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <span class="contact-label">Web</span>
+          <span class="contact-value">fabinteriors.co.ke</span>
+        </div>
+        <div class="corner-arcs">
+          <div class="arc arc-1"></div>
+          <div class="arc arc-2"></div>
+          <div class="arc arc-3"></div>
+          <div class="arc arc-4"></div>
+          <div class="arc arc-5"></div>
+        </div>
+      </div>
+      <div class="bottom-bar"></div>
+    </div>
+    <div class="flip-label">&#8592; Front</div>
+  </div>
+
+  <!-- BACK -->
+  <div>
+    <div class="card card-back">
+      <div class="back-left">
+        <div class="small-logo">
+          <img src="logo-card.jpeg" alt="FAB INTERIORS">
+        </div>
+        <div> <span style="font-family:'Playfair Display',serif;color:rgba(255,255,255,0.9);font-size:13px;font-weight:700;letter-spacing:3px;">FAB</span> </div>
+        <div class="social-label">Follow Us</div>
+      </div>
+      <div class="back-right">
+        <div class="back-title">Let's Build Together</div>
+        <div class="back-sub">Scan to visit our website</div>
+
+        <div class="qr-section">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fabinteriors.co.ke" alt="QR Code - fabinteriors.co.ke">
+          <div class="qr-label">fabinteriors.co.ke</div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61591627612912" target="_blank" title="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fabinteriors.ke" target="_blank" title="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://x.com/fabinterior_ke" target="_blank" title="X (Twitter)">
+              <svg viewBox="0 0 24 24"><path d="M4 4l6.5 8.5L4 20h2l5.5-7 4.5 7h5l-7-9.5L21 4h-2l-5 6.5L9 4H4z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@fab.interior.and.d" target="_blank" title="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4h3a4 4 0 0 0 4 4"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@fab_interiors" target="_blank" title="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar"></div>
+    </div>
+    <div class="flip-label">&#8592; Back</div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAB INTERIORS QR Code</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+  }
+  .qr-card {
+    text-align: center;
+    padding: 40px;
+  }
+  .qr-card img {
+    width: 300px;
+    height: 300px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .qr-card .label {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #1B3B2F;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .qr-card .url {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #666;
+  }
+  @media print {
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<div class="qr-card">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://fabinteriors.co.ke" alt="QR Code - fabinteriors.co.ke">
+  <div class="label">FAB INTERIORS AND CONSTRUCTION CO.</div>
+  <div class="url">fabinteriors.co.ke</div>
+</div>
+</body>
+</html>
