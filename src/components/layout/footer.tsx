@@ -54,13 +54,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-heading font-bold text-lg mb-4">FAB INTERIORS</h3>
+            <h3 className="font-heading font-bold text-lg mb-4 text-forest-green">FAB INTERIORS</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Full-service construction and interior design in Nairobi. We build your dream from foundation to finish.
             </p>
           </div>
           <div>
-            <h3 className="font-heading font-semibold text-base mb-4">Quick Links</h3>
+            <h3 className="font-heading font-semibold text-base mb-4 text-forest-green">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
@@ -71,7 +71,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-heading font-semibold text-base mb-4">Follow Us</h3>
+            <h3 className="font-heading font-semibold text-base mb-4 text-forest-green">Follow Us</h3>
             <div className="flex flex-wrap gap-3">
               {socials.map((s) => (
                 <a
